@@ -1,0 +1,4 @@
+const DEFAULTSTATUS = {
+  ERRORPRO: 400
+}
+export default DEFAULTSTATUS
