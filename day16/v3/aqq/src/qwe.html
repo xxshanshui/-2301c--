@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script type="text/javascript">
+  let person = {
+    name: '哈哈哈',
+    age: 18
+  }
+  // const qqq = {};
+
+  const p = new (person, {
+    get(target, propName) {
+      console.log(target, 'target');
+      console.log(propName, 'propName');
+      console.log(读取);
+      return Reflect.get(target, propName);
+    },
+    set(target, propName, value) {
+      console.log("修改");
+      Reflect.set(target, propName, value)
+    },
+    deleteproperty(target, propName) {
+      console.log('删除');
+      return Reflect.deleteProperty(target, propName)
+    }
+    // Object.defineProperty(qqq, "title", {
+    //   get() {
+    //     return person.title
+    //   },
+    //   set(value) {
+    //     console.log(value);
+    //     person.title = value
+    //   },
+    // });
+
+    // Object.defineProperty(qqq, "age", {
+    //   get() {
+    //     return person.age
+    //   },
+    //   set(value) {
+    //     console.log(value);
+    //     person.age = value
+    //   },
+    // });
+  })
+
+</script>
+
+</html>
